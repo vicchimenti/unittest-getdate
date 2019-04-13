@@ -12,7 +12,8 @@ def getdate(date_in):
     try:
         datetime.datetime.strptime(date_in, '%Y-%m-%d')
     except ValueError:
-        raise ValueError('Invalid Date Format, enter format YYYYY-MM-DD')
+        print('Invalid Date Format, enter format YYYYY-MM-DD')
+        return False
     return True
 
 
