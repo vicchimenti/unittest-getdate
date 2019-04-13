@@ -1,4 +1,13 @@
-import sys
+'''
+Victor Chimenti
+CPSC 5210 Testing and Debugging
+19SQ Seattle University
+
+get_time.py
+A program to unit test a valid date format
+'''
+
+
 import datetime
 
 
