@@ -1,17 +1,14 @@
-'''
-Victor Chimenti
-CPSC 5210 Testing and Debugging
-19SQ Seattle University
-
-get_time.py
-A program to unit test a valid date format
-'''
+#   Victor Chimenti
+#   CPSC 5210 Testing and Debugging
+#   19SQ Seattle University
+#   get_time.py
+#   A program to unit test a valid date format
 
 
 import datetime
 
 
-def GetDate(date_in):
+def getdate(date_in):
     try:
         datetime.datetime.strptime(date_in, '%Y-%m-%d')
     except ValueError:
@@ -22,4 +19,4 @@ def GetDate(date_in):
 date_input = input("Enter any date: ")
 date_today = datetime.datetime.now()
 print(str(date_today))
-print(str(GetDate(date_input)))
+print(str(getdate(date_input)))
