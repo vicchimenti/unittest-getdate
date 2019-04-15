@@ -17,7 +17,7 @@ def getdate(date_in):
     return True
 
 
-date_input = input("Enter any date: ")
+date_input = input("Enter any month and day in the format MM-DD: ")
 date_today = datetime.datetime.now()
 print(str(date_today))
 print(str(getdate(date_input)))
