@@ -4,9 +4,9 @@ from get_time import getdate
 
 class TestGetdate(TestCase):
     def test_getdate(self):
-        self.assertTrue(getdate(2019-1-1))
-        self.assertFalse(getdate(2019-12-0))
-        self.assertFalse(getdate(2019-0-12))
+        self.assertTrue(getdate('2019-1-1'))
+        self.assertFalse(getdate('2019-12-0'))
+        self.assertFalse(getdate('2019-0-12'))
         # self.assertTrue(2019-12-12)
         # self.assertFalse(2019-13-12)
         # self.assertTrue(2019-12-13)

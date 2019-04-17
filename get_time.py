@@ -12,12 +12,12 @@ def getdate(date_in):
     try:
         datetime.datetime.strptime(date_in, '%Y-%m-%d')
     except ValueError:
-        print('Invalid Date Format, enter format YYYYY-MM-DD')
+        # print('Invalid Date Format, enter format YYYYY-MM-DD')
         return False
     return True
 
 
-date_input = input("Enter any month and day in the format MM-DD: ")
+# date_input = input("Enter any month and day in the format MM-DD: ")
+# print(str(getdate(date_input)))
 date_today = datetime.datetime.now()
 print(str(date_today))
-print(str(getdate(date_input)))
