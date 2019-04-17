@@ -4,6 +4,7 @@ from get_time import getdate
 
 class TestGetdate(TestCase):
 
+    # valid value confirmation returns a bool
     def assertIsTrue(self, test_value):
         try:
             self.assertIs(test_value, True)
@@ -11,6 +12,7 @@ class TestGetdate(TestCase):
         except ValueError:
             return False
 
+    # invalid value confirmation returns a bool
     def assertIsFalse(self, test_value):
         try:
             self.assertIs(test_value, False)
@@ -18,8 +20,10 @@ class TestGetdate(TestCase):
         except ValueError:
             return False
 
+    # test suite
     def test_getdate(self):
-        test_input = '2019-01-01'
+
+        test_input = '2019-1-1'
         test_result = self.assertIsTrue(getdate(test_input))
         if test_result is True:
             print(test_input + ' Pass')
@@ -35,7 +39,8 @@ class TestGetdate(TestCase):
         self.assertTrue(getdate('2019-10-31'))
 
         test_input = '2019-12-0'
-        if self.assertIsFalse(getdate(test_input)) is True:
+        test_result = self.assertIsFalse((getdate(test_input)))
+        if test_result is True:
             print(test_input + ' Pass')
         else:
             print(test_input + ' Fail')
