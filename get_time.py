@@ -19,5 +19,5 @@ def getdate(date_in):
 
 date_today = datetime.datetime.now()
 print(str(date_today))
-date_input = input("Enter any month and day in the format YYYY-MM-DD to verify if it is a correct date format: ")
-print(str(getdate(date_input)) + '\n')
+# date_input = input("Enter any month and day in the format YYYY-MM-DD to verify if it is a correct date format: ")
+# print(str(getdate(date_input)) + '\n')
