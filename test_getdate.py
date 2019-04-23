@@ -20,199 +20,134 @@ class TestGetdate(TestCase):
         except ValueError:
             return False
 
-    # test suite dictionary
-    # def testSuite(self):
-    #     test_suite_dict = \
-    #         {
-    #             '2019-01-01': True,
-    #             '2019-12-12': True,
-    #             '2019-12-13': True,
-    #             '2019-12-27': True,
-    #             '2019-10-28': True,
-    #             '2019-10-29': True,
-    #             '2019-10-30': True,
-    #             '2019-10-31': True,
-    #             '2019-12-00': False,
-    #             '2019-00-12': False,
-    #             '2019-13-12': False,
-    #             '2019-27-12': False,
-    #             '2019-28-10': False,
-    #             '2019-29-10': False,
-    #             '2019-30-10': False,
-    #             '2019-31-10': False,
-    #             '2019-100-10': False,
-    #             '2019-10-100': False,
-    #         }
-    #     return test_suite_dict
-
-    # test suite driver
-    def testDriver(self, test_dict):
-        for key, value in test_dict.items():
-            if value is True:
-                test_result = self.assertIsTrue(value)
-                if test_result is True:
-                    print(key + ' Passed : Expected Result True : Actual Result True')
-                else:
-                    print(key + ' Failed : Expected Result True : Actual Result False')
-            elif value is False:
-                test_result = self.assertIsFalse(value)
-                if test_result is False:
-                    print(key + ' Passed : Expected Result False : Actual Result False')
-                else:
-                    print(key + ' Failed : Expected Result False : Actual Result True')
-            else:
-                print('Invalid Test Parameter')
-
     # test suite
     def test_getdate(self):
-        test_suite_dict = {'2019-01-01': True,
-                           '2019-12-12': True,
-                           '2019-12-13': True,
-                           '2019-12-27': True,
-                           '2019-10-28': True,
-                           '2019-10-29': True,
-                           '2019-10-30': True,
-                           '2019-10-31': True,
-                           '2019-12-00': False,
-                           '2019-00-12': False,
-                           '2019-13-12': False,
-                           '2019-27-12': False,
-                           '2019-28-10': False,
-                           '2019-29-10': False,
-                           '2019-30-10': False,
-                           '2019-31-10': False,
-                           '2019-100-10': False,
-                           '2019-10-100': False}
-        # td = self.testSuite()
-        self.testDriver(test_suite_dict)
 
+        test_input = '2019-01-01'
+        test_result = self.assertIsTrue(getdate(test_input))
+        if test_result is True:
+            print(test_input + ' Pass')
+        else:
+            print(test_input + ' Fail')
 
-        # test_input = '2019-01-01'
-        # expected_result = 1
-        # test_result = self.assertIsTrue(getdate(test_input))
-        # if test_result is True:
-        #     print(test_input + ' Passed : Expected Result True : Actual Result True')
-        # else:
-        #     print(test_input + ' Failed : Expected Result True : Actual Result False')
-        #
-        # test_input = '2019-12-12'
-        # test_result = self.assertIsTrue(getdate(test_input))
-        # if test_result is True:
-        #     print(test_input + ' Passed : Expected Result True : Actual Result True')
-        # else:
-        #     print(test_input + ' Failed : Expected Result True : Actual Result False')
-        #
-        # test_input = '2019-12-13'
-        # test_result = self.assertIsTrue(getdate(test_input))
-        # if test_result is True:
-        #     print(test_input + ' Passed : Expected Result True : Actual Result True')
-        # else:
-        #     print(test_input + ' Failed : Expected Result True : Actual Result False')
-        #
-        # test_input = '2019-12-27'
-        # test_result = self.assertIsTrue(getdate(test_input))
-        # if test_result is True:
-        #     print(test_input + ' Passed : Expected Result True : Actual Result True')
-        # else:
-        #     print(test_input + ' Failed : Expected Result True : Actual Result False')
-        #
-        # test_input = '2019-10-28'
-        # test_result = self.assertIsTrue(getdate(test_input))
-        # if test_result is True:
-        #     print(test_input + ' Passed : Expected Result True : Actual Result True')
-        # else:
-        #     print(test_input + ' Failed : Expected Result True : Actual Result False')
-        #
-        # test_input = '2019-10-29'
-        # test_result = self.assertIsTrue(getdate(test_input))
-        # if test_result is True:
-        #     print(test_input + ' Passed : Expected Result True : Actual Result True')
-        # else:
-        #     print(test_input + ' Failed : Expected Result True : Actual Result False')
-        #
-        # test_input = '2019-10-30'
-        # test_result = self.assertIsTrue(getdate(test_input))
-        # if test_result is True:
-        #     print(test_input + ' Passed : Expected Result True : Actual Result True')
-        # else:
-        #     print(test_input + ' Failed : Expected Result True : Actual Result False')
-        #
-        # test_input = '2019-10-31'
-        # test_result = self.assertIsTrue(getdate(test_input))
-        # if test_result is True:
-        #     print(test_input + ' Passed : Expected Result True : Actual Result True')
-        # else:
-        #     print(test_input + ' Failed : Expected Result True : Actual Result False')
-        #
-        # test_input = '2019-12-00'
-        # test_result = self.assertIsFalse((getdate(test_input)))
-        # if test_result is True:
-        #     print(test_input + ' Passed : Expected Result False : Actual Result False')
-        # else:
-        #     print(test_input + ' Failed : Expected Result False : Actual Result True')
-        #
-        # test_input = '2019-00-12'
-        # test_result = self.assertIsFalse((getdate(test_input)))
-        # if test_result is True:
-        #     print(test_input + ' Passed : Expected Result False : Actual Result False')
-        # else:
-        #     print(test_input + ' Failed : Expected Result False : Actual Result True')
-        #
-        # test_input = '2019-13-12'
-        # test_result = self.assertIsFalse((getdate(test_input)))
-        # if test_result is True:
-        #     print(test_input + ' Passed : Expected Result False : Actual Result False')
-        # else:
-        #     print(test_input + ' Failed : Expected Result False : Actual Result True')
-        #
-        # test_input = '2019-27-12'
-        # test_result = self.assertIsFalse((getdate(test_input)))
-        # if test_result is True:
-        #     print(test_input + ' Passed : Expected Result False : Actual Result False')
-        # else:
-        #     print(test_input + ' Failed : Expected Result False : Actual Result True')
-        #
-        # test_input = '2019-28-10'
-        # test_result = self.assertIsFalse((getdate(test_input)))
-        # if test_result is True:
-        #     print(test_input + ' Passed : Expected Result False : Actual Result False')
-        # else:
-        #     print(test_input + ' Failed : Expected Result False : Actual Result True')
-        #
-        # test_input = '2019-29-10'
-        # test_result = self.assertIsFalse((getdate(test_input)))
-        # if test_result is True:
-        #     print(test_input + ' Passed : Expected Result False : Actual Result False')
-        # else:
-        #     print(test_input + ' Failed : Expected Result False : Actual Result True')
-        #
-        # test_input = '2019-30-10'
-        # test_result = self.assertIsFalse((getdate(test_input)))
-        # if test_result is True:
-        #     print(test_input + ' Passed : Expected Result False : Actual Result False')
-        # else:
-        #     print(test_input + ' Failed : Expected Result False : Actual Result True')
-        #
-        # test_input = '2019-31-10'
-        # test_result = self.assertIsFalse((getdate(test_input)))
-        # if test_result is True:
-        #     print(test_input + ' Passed : Expected Result False : Actual Result False')
-        # else:
-        #     print(test_input + ' Failed : Expected Result False : Actual Result True')
-        #
-        # test_input = '2019-100-10'
-        # test_result = self.assertIsFalse((getdate(test_input)))
-        # if test_result is True:
-        #     print(test_input + ' Passed : Expected Result False : Actual Result False')
-        # else:
-        #     print(test_input + ' Failed : Expected Result False : Actual Result True')
-        #
-        # test_input = '2019-10-100'
-        # test_result = self.assertIsFalse((getdate(test_input)))
-        # if test_result is True:
-        #     print(test_input + ' Passed : Expected Result False : Actual Result False')
-        # else:
-        #     print(test_input + ' Failed : Expected Result False : Actual Result True')
+        test_input = '2019-12-12'
+        test_result = self.assertIsTrue(getdate(test_input))
+        if test_result is True:
+            print(test_input + ' Pass')
+        else:
+            print(test_input + ' Fail')
+
+        test_input = '2019-12-13'
+        test_result = self.assertIsTrue(getdate(test_input))
+        if test_result is True:
+            print(test_input + ' Pass')
+        else:
+            print(test_input + ' Fail')
+
+        test_input = '2019-12-27'
+        test_result = self.assertIsTrue(getdate(test_input))
+        if test_result is True:
+            print(test_input + ' Pass')
+        else:
+            print(test_input + ' Fail')
+
+        test_input = '2019-10-28'
+        test_result = self.assertIsTrue(getdate(test_input))
+        if test_result is True:
+            print(test_input + ' Pass')
+        else:
+            print(test_input + ' Fail')
+
+        test_input = '2019-10-29'
+        test_result = self.assertIsTrue(getdate(test_input))
+        if test_result is True:
+            print(test_input + ' Pass')
+        else:
+            print(test_input + ' Fail')
+
+        test_input = '2019-10-30'
+        test_result = self.assertIsTrue(getdate(test_input))
+        if test_result is True:
+            print(test_input + ' Pass')
+        else:
+            print(test_input + ' Fail')
+
+        test_input = '2019-10-31'
+        test_result = self.assertIsTrue(getdate(test_input))
+        if test_result is True:
+            print(test_input + ' Pass')
+        else:
+            print(test_input + ' Fail')
+
+        test_input = '2019-12-00'
+        test_result = self.assertIsFalse((getdate(test_input)))
+        if test_result is True:
+            print(test_input + ' Pass')
+        else:
+            print(test_input + ' Fail')
+
+        test_input = '2019-0-12'
+        test_result = self.assertIsFalse((getdate(test_input)))
+        if test_result is True:
+            print(test_input + ' Pass')
+        else:
+            print(test_input + ' Fail')
+
+        test_input = '2019-13-12'
+        test_result = self.assertIsFalse((getdate(test_input)))
+        if test_result is True:
+            print(test_input + ' Pass')
+        else:
+            print(test_input + ' Fail')
+
+        test_input = '2019-27-12'
+        test_result = self.assertIsFalse((getdate(test_input)))
+        if test_result is True:
+            print(test_input + ' Pass')
+        else:
+            print(test_input + ' Fail')
+
+        test_input = '2019-28-10'
+        test_result = self.assertIsFalse((getdate(test_input)))
+        if test_result is True:
+            print(test_input + ' Pass')
+        else:
+            print(test_input + ' Fail')
+
+        test_input = '2019-29-10'
+        test_result = self.assertIsFalse((getdate(test_input)))
+        if test_result is True:
+            print(test_input + ' Pass')
+        else:
+            print(test_input + ' Fail')
+
+        test_input = '2019-30-10'
+        test_result = self.assertIsFalse((getdate(test_input)))
+        if test_result is True:
+            print(test_input + ' Pass')
+        else:
+            print(test_input + ' Fail')
+
+        test_input = '2019-31-10'
+        test_result = self.assertIsFalse((getdate(test_input)))
+        if test_result is True:
+            print(test_input + ' Pass')
+        else:
+            print(test_input + ' Fail')
+
+        test_input = '2019-100-10'
+        test_result = self.assertIsFalse((getdate(test_input)))
+        if test_result is True:
+            print(test_input + ' Pass')
+        else:
+            print(test_input + ' Fail')
+
+        test_input = '2019-10-100'
+        test_result = self.assertIsFalse((getdate(test_input)))
+        if test_result is True:
+            print(test_input + ' Pass')
+        else:
+            print(test_input + ' Fail')
 
 
 # if __name__ == '__main__':
